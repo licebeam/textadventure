@@ -22,7 +22,7 @@ setInterval(function () {
         termString = " ";
         char_ind = 0;
         termWriting = false;
-        
+
     } else {
         termWriting = true;
         termText.scrollBy(0, 50);
@@ -40,7 +40,7 @@ function handleKeyPress(e) {
             //termString = " " + inp_field.value;
             commands(inp_field.value);
             inp_field.value = '';
-             
+
         }
     }
 }
@@ -48,13 +48,13 @@ function handleKeyPress(e) {
 function sendtoWriter(a) {
     $("#termText").append('<br/>');
     termString = a;
-    termText.scrollBy(0, 50);
+    termText.scrollBy(0, 100);
 }
 
 function colortoWriter(a, b) {
     $("#termText").append('<em style="color:' +
         b + '">' + a + '</em>');
-    termText.scrollBy(0, 50);
+    termText.scrollBy(0, 100);
 
 }
 

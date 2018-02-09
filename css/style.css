@@ -1,6 +1,6 @@
 body {
     background-color: skyblue;
-   
+
 }
 
 .wrapper {
@@ -53,10 +53,7 @@ body {
     overflow-y: scroll;
 }
 
-#playertext {
-
-
-}
+#playertext {}
 
 #playerstats {
 
