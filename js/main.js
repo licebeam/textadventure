@@ -1,16 +1,16 @@
 /*eslint-env browser*/
 
-//input field 
+//input field
 var inp_field = document.getElementById("inpField");
 
 var termText = document.getElementById("termText");
 termText.textContent = "";
 
-
 //TERMINAL CODE-----------
 var termWriting = false; //makes sure we can't enter commands during writing.
 var char_ind = 0;
-var termString = "You have been met with your demise and will perish within the depths of this hellish nightmare.";
+var termString = "You have been met with your demise and will perish within the depths of this hel" +
+        "lish nightmare.";
 var addBreak = false;
 
 //async text writer
@@ -28,7 +28,6 @@ setInterval(function () {
         termText.scrollBy(0, 50);
     }
 }, 20);
-
 
 //CHECKS FOR ENTER KEY ON INPUT
 function handleKeyPress(e) {
@@ -52,22 +51,25 @@ function sendtoWriter(a) {
 }
 
 function colortoWriter(a, b) {
-    $("#termText").append('<em style="color:' +
-        b + '">' + a + '</em>');
+    $("#termText").append('<em style="color:' + b + '">' + a + '</em>');
     termText.scrollBy(0, 100);
 
 }
 
-//test
-/////////////////////////////
-
-
-///UPDATE GAME LOGIC-------
-
-//async updating game..
+// test /////////////////////////// /UPDATE GAME LOGIC------- async updating
+// game..
 setInterval(function () {
     'use strict';
+    updateStats();
     //termString = "Updating Game Logic. "; //debug test
-}, 10000);
+}, 60);
 
-///
+/// update player stats
+var statText = document.getElementById("playerStats");
+var invText = document.getElementById("playerInv");
+function updateStats() {
+    'use strict';
+    $("#playerStats").text('Fuck You');
+    $("#playerInv").text(player.inventory);
+
+}

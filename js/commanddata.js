@@ -1,23 +1,31 @@
 /*eslint-env browser*/
 var interacting = "nothing";
 
-//Player Text Commands BASIC----
-//command function.
+//Player Text Commands BASIC---- command function.
 function commands(iText) { //checks the input field
     'use strict';
-    if (iText === "help") {
-        termString = "You asked for help with a command! Wow!";
-        inp_field.value = '';
-    }
-    //walking
-    if (iText === "up") {
-        termString = "You walk North.";
-        inp_field.value = '';
-    }
+    switch (iText) {
+        case "help":
+            termString = "You asked for help with a command! Wow!";
+            inp_field.value = '';
+            break;
 
-    if (iText === "down") {
-        termString = "You walk South.";
-        inp_field.value = '';
+            //walking
+        case "up":
+            termString = "You walk North.";
+            inp_field.value = '';
+            break;
+
+        case "down":
+            termString = "You walk South.";
+            inp_field.value = '';
+            break;
+
+        case "update": //test input
+            colortoWriter("updating", "green");
+            updateStats();
+            inp_field.value = '';
+            break;
     }
 
     if (iText === "left") {
@@ -29,7 +37,7 @@ function commands(iText) { //checks the input field
         termString = "You walk East.";
         inp_field.value = '';
     }
-    
+
     // interact commands
     if (iText === "interacting") {
         colortoWriter("I am interacting with " + interacting, "yellow");
@@ -42,7 +50,7 @@ function commands(iText) { //checks the input field
         inp_field.value = '';
 
     }
-    
+
     //senses
     if (iText === "smell") {
         termString = ranRoom.smell;
@@ -71,7 +79,6 @@ function commands(iText) { //checks the input field
         inp_field.value = '';
 
     }
-
 
 }
 
